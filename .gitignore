@@ -1,17 +1,5 @@
-# 依赖与本地产物
 node_modules/
-package.json
-package-lock.json
-bun.lock
-
-# 系统文件
-.DS_Store
-Thumbs.db
-
-# 编辑器
-.vscode/
-.idea/
-
-# 日志与临时
 *.log
-.tmp/
+.DS_Store
+.env
+.env.local
