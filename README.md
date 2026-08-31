@@ -9,17 +9,19 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
 .opencode/
   agents/
     hk-visual.md                # 港系视觉 agent
-    jp-visual.md                # 日系小清新视觉 agent
+    jp-visual.md                # 日系小清新视觉 agent（含比基尼/夏日女友专题）
     wf-visual.md                # 武侠视觉 agent
   commands/
     hk.md                       # /hk 切到港系
     jp.md                       # /jp 切到日系
     wf.md                       # /wf 切到武侠
   plugins/
-    auto-route.ts               # chat.message 钩子：按关键词自动切换 agent
+    auto-route.ts               # chat.message 钩子：按关键词自动切换 agent（含比基尼路由）
   skills/
     hk-visual-prompts/SKILL.md  # 港系写作骨架 + 语汇库
     jp-visual-prompts/SKILL.md  # 日系写作骨架 + 语汇库
+      references/
+        jp-bikini-summer-50.md  # 日系比基尼·夏日女友 50 组视觉资产库（5 条海岸线）
     wf-visual-prompts/SKILL.md  # 武侠写作骨架 + 语汇库
 ```
 

@@ -1,7 +1,7 @@
 import type { PluginInput, PluginOptions, Hooks } from "@opencode-ai/plugin"
 
 const RULES: Record<string, string[]> = {
-  "jp-visual": ["日系", "小清新", "初恋感", "棉麻", "柔焦胶片", "日系穿搭", "日系校园风"],
+  "jp-visual": ["日系", "小清新", "初恋感", "棉麻", "柔焦胶片", "日系穿搭", "日系校园风", "比基尼", "夏日女友", "海边写真", "海滩写真", "泳装", "bikini"],
   "hk-visual": ["港风", "港系", "港姐", "Vogue香港", "香港电影感", "霓虹夜色", "唐楼", "维港"],
   "wf-visual": ["武侠", "金庸", "古龙", "徐克", "侠客", "侠女", "江湖", "剑气"],
 }
