@@ -58,3 +58,25 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
 2. `cd` 到项目根目录
 3. `quit` 并重启 opencode
 4. 依赖 `@opencode-ai/plugin` 需已在 `.opencode/node_modules/` 安装
+
+### 安装到全局 opencode（任意项目可用）
+
+项目内 `.opencode/` 仅在本项目生效；若想在任何项目里都能用这七套风格，把组件同步到全局配置目录 `~/.config/opencode/`，opencode 启动时会自动扫描以下标准目录：
+
+```
+agents/<name>.md             →  ~/.config/opencode/agents/
+commands/<name>.md           →  ~/.config/opencode/commands/
+plugins/auto-route.ts        →  ~/.config/opencode/plugins/
+skills/<name>/SKILL.md       →  ~/.config/opencode/skills/
+```
+
+同步命令（在仓库根目录执行）：
+
+```
+cp .opencode/agents/*.md      ~/.config/opencode/agents/
+cp .opencode/commands/*.md    ~/.config/opencode/commands/
+cp .opencode/plugins/*.ts     ~/.config/opencode/plugins/
+for s in .opencode/skills/*/; do rm -rf ~/.config/opencode/skills/"$(basename "$s")"; cp -a "$s" ~/.config/opencode/skills/; done
+```
+
+注意：`@opencode-ai/plugin` 依赖需在全局 `~/.config/opencode/node_modules/` 存在，插件才能加载。全局安装后，用 `opencode debug config` 在任意空白目录可看到七套 agents 与 commands（`/ca`、`/hk`、`/jp`、`/kr`、`/ny`、`/uk`、`/wf`）。
