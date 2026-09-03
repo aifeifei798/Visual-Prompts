@@ -8,12 +8,12 @@
 opencode.jsonc                  # 项目配置（default_agent + skills 路径）
 .opencode/
   agents/
-    ca-visual.md                # 加州邻家女孩视觉 agent（阳光海岸 / 冲浪）
-    hk-visual.md                # 港系视觉 agent
-    jp-visual.md                # 日系小清新视觉 agent（含比基尼/夏日女友专题）
-    kr-visual.md                # 韩系视觉 agent（韩剧 / K-pop）
-    ny-visual.md                # 纽约模特视觉 agent（NYC 街拍 / 美式大片）
-    uk-visual.md                # 英伦模特视觉 agent（优雅含蓄 / 复古贵气 / 学院派 / 雾都）
+    ca-visual.md                # 加州邻家女孩视觉 agent（阳光海岸 / 冲浪；比基尼叠加全球库）
+    hk-visual.md                # 港系视觉 agent（比基尼叠加全球库）
+    jp-visual.md                # 日系小清新视觉 agent（比基尼叠加全球库）
+    kr-visual.md                # 韩系视觉 agent（韩剧 / K-pop；比基尼叠加全球库）
+    ny-visual.md                # 纽约模特视觉 agent（NYC 街拍 / 美式大片；比基尼叠加全球库）
+    uk-visual.md                # 英伦模特视觉 agent（优雅含蓄 / 复古贵气 / 学院派 / 雾都；比基尼叠加全球库）
     wf-visual.md                # 武侠视觉 agent
   commands/
     ca.md                       # /ca 切到加州邻家女孩
@@ -24,13 +24,16 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
     uk.md                       # /uk 切到英伦模特
     wf.md                       # /wf 切到武侠
   plugins/
-    auto-route.ts               # chat.message 钩子：按关键词自动切换 agent（含比基尼/韩系/纽约/加州/英伦路由）
+    auto-route.ts               # chat.message 钩子：显式风格优先，比基尼通用词 fallback（全球共享，不再只进日系）
   skills/
+    bikini-summer-global/SKILL.md  # 全球共享比基尼写作 skill（全球美女 + 全球海岸；位置规则：比基尼在穿搭段、地点在实景段）
+      references/
+        bikini-summer-global-50.md  # 全球比基尼·夏日海滩 50 组视觉资产库（5 大海岸系统）
     ca-visual-prompts/SKILL.md  # 加州邻家女孩写作骨架 + 语汇库（阳光海岸/冲浪）
     hk-visual-prompts/SKILL.md  # 港系写作骨架 + 语汇库
     jp-visual-prompts/SKILL.md  # 日系写作骨架 + 语汇库
       references/
-        jp-bikini-summer-50.md  # 日系比基尼·夏日女友 50 组视觉资产库（5 条海岸线）
+        jp-bikini-summer-50.md  # 已废弃，仅保留迁移说明，指向全球共享库
     kr-visual-prompts/SKILL.md  # 韩系写作骨架 + 语汇库（韩剧/K-pop/首尔氛围）
     ny-visual-prompts/SKILL.md  # 纽约模特写作骨架 + 语汇库（NYC 街拍/美式大片）
     uk-visual-prompts/SKILL.md  # 英伦模特写作骨架 + 语汇库（优雅含蓄/学院派/雾都胶片）
@@ -51,6 +54,7 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
 
 - 直接描述风格（港风 / 日系 / 韩剧 / K-pop / 纽约 / NYC / 加州 / Cali / 英伦 / 伦敦 / UK / 武侠），插件会尝试自动切换 agent
 - 或用 `/` + Tab 切换：`/ca`、`/hk`、`/jp`、`/kr`、`/ny`、`/uk`、`/wf`
+- 比基尼 / 泳装 / 海边写真为全球共享主题：如“加州比基尼”进 `/ca`、“港系泳装”进 `/hk`，无显式风格时 fallback 到 `/jp`；内容均为全球美女 + 全球海岸，位置规则统一为比基尼在穿搭段、地点在实景段
 
 ## 安装
 

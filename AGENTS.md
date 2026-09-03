@@ -10,11 +10,12 @@
 ## Structure
 ```
 .opencode/
-  agents/*.md        # 7 个 primary agents (hk/jp/kr/wf/ny/ca/uk)，model: opencode/big-pickle
-  commands/*.md      # /hk /jp /kr /wf /ny /ca /uk — 每条 frontmatter 含 agent: 切代理，body 含 $ARGUMENTS
-  plugins/auto-route.ts  # chat.message 钩子，按 RULES 关键词改 output.message.agent（首个匹配即 break）
+  agents/*.md        # 7 个 primary agents (hk/jp/kr/wf/ny/ca/uk)，model: opencode/big-pickle；hk/jp/kr/ny/ca/uk 均可叠加全球比基尼库
+  commands/*.md      # /hk /jp /kr /wf /ny /ca /uk — 每条 frontmatter 含 agent: 切代理，body 含 $ARGUMENTS；hk/jp/kr/ny/ca/uk 含比基尼全球库加载条件
+  plugins/auto-route.ts  # chat.message 钩子：显式风格优先，比基尼通用词 fallback 到 jp-visual（内容已是全球库）
   skills/*/SKILL.md  # 写作骨架、语汇/场景/摄影参数库、§2 红线禁忌
-    jp-visual-prompts/references/jp-bikini-summer-50.md  # 仅 jp 语境+比基尼/泳装关键词时按需加载
+    bikini-summer-global/SKILL.md + references/bikini-summer-global-50.md  # 全球共享，任一风格+比基尼关键词时叠加加载
+    jp-visual-prompts/references/jp-bikini-summer-50.md  # 已废弃，仅保留迁移说明
 samples/             # 已生成提示词示例，非源码
 ```
 
@@ -25,8 +26,10 @@ samples/             # 已生成提示词示例，非源码
 4. `.opencode/plugins/auto-route.ts` — `RULES` 追加关键词
 5. 同步改 `README.md` 结构表与风格表；新增 `references/` 要在对应 agent/command 标注加载条件。
 
-## Prompt Constraints (All 7 Skills Share)
+## Prompt Constraints (All 7 Skills Share + Global Bikini)
 - 输出=单段连贯中文自然语言长句，按 `构图景别 → 动态神态 → 穿搭/面料/妆容 → 实景 → 胶片光影` 顺序，不可缺要素。
+- 比基尼位置规则：颜色、款式、材质只写在穿搭段，拍摄地点与模特地域归属只写在实景段，不可混放。
+- 比基尼模特与海滩按全球库取用：全球美女 + 全球海岸，不局限单一国家。
 - 禁止：`[]` `()` `+` 出现在提示词正文；`男友视角/偷拍/恶作剧/偷吃`；`标准微笑/手叉腰/比耶/凹造型/摆pose`；低俗化描写。自检后才输出。
 - 成套输出可编号，但每组内部仍是独立完整可复制段落。
 
@@ -47,4 +50,4 @@ samples/             # 已生成提示词示例，非源码
 - 无 `package.json` scripts / lint / typecheck / test / CI — 不要臆造 `npm test`。
 - `auto-route.ts` 直接改 `output.message.agent`，静默 catch，不阻塞消息；关键词大小写敏感按 `String.includes` 匹配。
 - `opencode.jsonc` 使用带注释的 JSONC，非标准 JSON。
-- `jp-bikini-summer-50.md` 不会自动发现，需 agent/command 显式要求加载。
+- `bikini-summer-global-50.md` 不会自动发现，需 agent/command 显式要求加载；旧 `jp-bikini-summer-50.md` 仅保留迁移说明。
