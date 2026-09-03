@@ -16,6 +16,7 @@
   skills/*/SKILL.md  # 写作骨架、语汇/场景/摄影参数库、§2 红线禁忌
     bikini-summer-global/SKILL.md + references/bikini-summer-global-50.md  # 全球共享，任一风格+比基尼关键词时叠加加载
     jp-visual-prompts/references/jp-bikini-summer-50.md  # 已废弃，仅保留迁移说明
+    jp-visual-prompts/references/jp-honeyworks-youth-50.md  # 日系青春初恋系列，jp 语境+青春/告白/校园关键词时按需加载
 samples/             # 已生成提示词示例，非源码
 ```
 
