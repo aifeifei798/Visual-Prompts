@@ -1,6 +1,6 @@
 # OpenCode 风格提示词系统
 
-港系 / 日系小清新 / 韩系 / 武侠 / 纽约模特 / 加州邻家女孩 / 英伦模特七种风格的 AI 生图提示词工程，含自动路由插件。
+港系 / 日系小清新 / 韩系 / 武侠 / 纽约模特 / 加州邻家女孩 / 英伦模特 / 中国网红美女八种风格的 AI 生图提示词工程，含自动路由插件。
 
 ## 项目结构
 
@@ -9,6 +9,7 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
 .opencode/
   agents/
     ca-visual.md                # 加州邻家女孩视觉 agent（阳光海岸 / 冲浪；比基尼叠加全球库）
+    cn-visual.md                # 中国网红美女视觉 agent（网红 / 小红书风 / 抖音风；比基尼叠加全球库）
     hk-visual.md                # 港系视觉 agent（比基尼叠加全球库）
     jp-visual.md                # 日系小清新视觉 agent（比基尼叠加全球库；HoneyWorks青春初恋系列）
     kr-visual.md                # 韩系视觉 agent（韩剧 / K-pop；比基尼叠加全球库）
@@ -17,6 +18,7 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
     wf-visual.md                # 武侠视觉 agent
   commands/
     ca.md                       # /ca 切到加州邻家女孩
+    cn.md                       # /cn 切到中国网红美女
     hk.md                       # /hk 切到港系
     jp.md                       # /jp 切到日系
     kr.md                       # /kr 切到韩系
@@ -30,6 +32,7 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
       references/
         bikini-summer-global-50.md  # 全球比基尼·夏日海滩 50 组视觉资产库（5 大海岸系统）
     ca-visual-prompts/SKILL.md  # 加州邻家女孩写作骨架 + 语汇库（阳光海岸/冲浪）
+    cn-visual-prompts/SKILL.md  # 中国网红美女写作骨架 + 语汇库（网红/小红书风/抖音风）
     hk-visual-prompts/SKILL.md  # 港系写作骨架 + 语汇库
     jp-visual-prompts/SKILL.md  # 日系写作骨架 + 语汇库
       references/
@@ -50,11 +53,12 @@ opencode.jsonc                  # 项目配置（default_agent + skills 路径�
 - **加州邻家女孩**：阳光灿烂 + 亲切自然 + 自由随性 + 健康活力 + 干净真实
 - **英伦模特**：含蓄克制 + 贵气典雅 + 复古暗调 + 学院派 + 低调有腔调 + 带一点英伦摇滚的叛逆
 - **武侠**：孤傲凌厉 + 侠气纵横 + 武侠电影感
+- **中国网红美女**：自然真实 + 柔光暖调 + 清新氧气感 + 网红博主感 + 甜美自然
 
 ## 使用方式
 
-- 直接描述风格（港风 / 日系 / 韩剧 / K-pop / 纽约 / NYC / 加州 / Cali / 英伦 / 伦敦 / UK / 武侠），插件会尝试自动切换 agent
-- 或用 `/` + Tab 切换：`/ca`、`/hk`、`/jp`、`/kr`、`/ny`、`/uk`、`/wf`
+- 直接描述风格（港风 / 日系 / 韩剧 / K-pop / 纽约 / NYC / 加州 / Cali / 英伦 / 伦敦 / UK / 武侠 / 网红 / 网红美女 / 小红书风 / 抖音风），插件会尝试自动切换 agent
+- 或用 `/` + Tab 切换：`/ca`、`/cn`、`/hk`、`/jp`、`/kr`、`/ny`、`/uk`、`/wf`
 - 比基尼 / 泳装 / 海边写真为全球共享主题：如“加州比基尼”进 `/ca`、“港系泳装”进 `/hk`，无显式风格时 fallback 到 `/jp`；内容均为全球美女 + 全球海岸，位置规则统一为比基尼在穿搭段、地点在实景段
 - HoneyWorks / 青春 / 告白 / 校园 / 放学为日系青春初恋系列主题，进 `/jp` 后叠加 `jp-honeyworks-youth-50.md` 系列库：校园日常 / 放学归途 / 季节祭典 / 雨与车站 / 远行未来共 50 组
 
@@ -85,4 +89,4 @@ cp .opencode/plugins/*.ts     ~/.config/opencode/plugins/
 for s in .opencode/skills/*/; do rm -rf ~/.config/opencode/skills/"$(basename "$s")"; cp -a "$s" ~/.config/opencode/skills/; done
 ```
 
-注意：`@opencode-ai/plugin` 依赖需在全局 `~/.config/opencode/node_modules/` 存在，插件才能加载。全局安装后，用 `opencode debug config` 在任意空白目录可看到七套 agents 与 commands（`/ca`、`/hk`、`/jp`、`/kr`、`/ny`、`/uk`、`/wf`）。
+注意：`@opencode-ai/plugin` 依赖需在全局 `~/.config/opencode/node_modules/` 存在，插件才能加载。全局安装后，用 `opencode debug config` 在任意空白目录可看到八套 agents 与 commands（`/ca`、`/cn`、`/hk`、`/jp`、`/kr`、`/ny`、`/uk`、`/wf`）。
