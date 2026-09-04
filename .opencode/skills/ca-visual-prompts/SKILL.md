@@ -15,7 +15,7 @@ description: 专门生成「加州邻家女孩」（California girl / 阳光海�
 
 ## 触发关键词
 
-加州 / 加利福尼亚 / California / Cali / CA / 加州女孩 / 邻家女孩 / 阳光海岸 / 冲浪 / 冲浪少女 / 加州梦 / 瑞典休闲 / 小麦色 / 美式休闲 / Santa Monica / 圣莫尼卡 / Venice / 威尼斯海滩 / Malibu / 马里布 / 洛杉矶 / 棕榈树 / 粉色夕阳 / 复古冲浪 / 阳光写真 / 海岸人像
+加州 / 加利福尼亚 / California / Cali / CA / 加州女孩 / 邻家女孩 / 阳光海岸 / 冲浪 / 冲浪少女 / 加州梦 / 美式休闲 / 小麦色 / Santa Monica / 圣莫尼卡 / Venice / 威尼斯海滩 / Malibu / 马里布 / 洛杉矶 / 棕榈树 / 粉色夕阳 / 复古冲浪 / 阳光写真 / 海岸人像
 
 ---
 
